@@ -1,0 +1,32 @@
+
+# Python environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Frontend dependencies and build
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local database and uploaded field images
+agri_rakshak.db
+*.db
+data/disease_images/
+
+# Logs
+*.log
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Uploaded field evidence and user files
+uploads/

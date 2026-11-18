@@ -1,0 +1,6 @@
+dataset_name,crop,task,source_url,licence_status,labels,limitations,approved
+PlantVillage,general,image classification,https://plantvillage.psu.edu/,VERIFY,Audit required,Controlled images may not generalise,No
+Rice leaf dataset,rice,disease classification,TBD,VERIFY,Audit required,Verify provenance and labels,No
+Tea leaf dataset,tea,disease classification,TBD,VERIFY,Audit required,Need local field validation,No
+Sentinel-2 L2A,multiple,time series,https://browser.dataspace.copernicus.eu/,VERIFY,Reflectance bands,Cloud and mixed-pixel effects,No
+NASA POWER,multiple,weather,https://power.larc.nasa.gov/,VERIFY,Weather variables,Gridded data not field sensor data,No

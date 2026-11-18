@@ -1,0 +1,422 @@
+
+.disease-page {
+  padding-bottom: 35px;
+}
+
+.disease-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.disease-info-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 14px;
+  background: var(--card-bg, #fff);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.disease-info-card > span {
+  font-size: 30px;
+}
+
+.disease-info-card h3 {
+  margin: 0 0 7px;
+  font-size: 16px;
+}
+
+.disease-info-card p {
+  margin: 0;
+  color: #8490a0;
+  font-size: 12px;
+}
+
+.disease-upload-panel,
+.disease-classes-panel {
+  padding: 25px;
+  margin-bottom: 22px;
+}
+
+.disease-section-heading h2,
+.disease-classes-panel h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    opacity: 1;
+}
+.disease-section-heading p,
+.disease-classes-panel > p {
+  margin: 0 0 22px;
+  color: #8490a0;
+  font-size: 13px;
+}
+
+.disease-upload-area {
+  min-height: 230px;
+  border: 2px dashed #a9b9ae;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  cursor: pointer;
+  background: rgba(22, 128, 82, 0.035);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.disease-upload-area:hover {
+  border-color: #168052;
+  background: rgba(22, 128, 82, 0.08);
+}
+
+.upload-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.disease-upload-area h3 {
+  margin: 0 0 9px;
+  font-size: 17px;
+}
+
+.disease-upload-area p {
+  margin: 0 0 12px;
+  color: #8490a0;
+  font-size: 13px;
+}
+
+.upload-format {
+  color: #8490a0;
+  font-size: 11px;
+}
+
+.disease-preview {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.07);
+}
+
+.disease-preview img {
+  width: 220px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.disease-preview-details h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+
+.disease-preview-details p {
+  margin: 0 0 8px;
+  color: #8490a0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.remove-image-button {
+  margin-top: 12px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b42318;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-image-button:hover {
+  background: #fecaca;
+}
+
+.disease-class-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.disease-class-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.045);
+}
+
+.disease-class-item span {
+  font-size: 22px;
+}
+
+.disease-class-item strong {
+  font-size: 13px;
+}
+
+.disease-disclaimer {
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: #fff7e6;
+  border: 1px solid #f3dfb1;
+  color: #805b19;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .disease-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disease-class-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .disease-upload-panel,
+  .disease-classes-panel {
+    padding: 17px;
+  }
+
+  .disease-class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disease-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .disease-preview img {
+    width: 100%;
+  }
+}
+
+
+.analyze-image-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 9px;
+  background: #16834a;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analyze-image-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.prediction-loading {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.prediction-error {
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.disease-result-panel {
+  margin-top: 22px;
+}
+
+.prediction-main-result {
+  padding: 20px;
+  margin: 18px 0;
+  border-radius: 12px;
+  background: #eaf7ee;
+  text-align: center;
+}
+
+.prediction-main-result h3 {
+  font-size: 25px;
+  margin: 10px 0;
+  color: #166534;
+}
+
+.probability-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.probability-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.probability-track {
+  height: 9px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.probability-fill {
+  height: 100%;
+  background: #16834a;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+.prediction-interpretation {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.interpretation-warning {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+}
+
+.interpretation-normal {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+.prediction-interpretation h3 {
+  margin-top: 0;
+  font-size: 17px;
+}
+
+.prediction-interpretation p {
+  margin: 8px 0;
+}
+
+.prediction-interpretation small {
+  display: block;
+  margin-top: 10px;
+  color: #64748b;
+}
+
+.model-scope-notice {
+  margin: 18px 0;
+  padding: 16px 18px;
+  background: #f0f7f2;
+  border: 1px solid #c9dfce;
+  border-left: 4px solid #287a46;
+  border-radius: 8px;
+  color: #234b32;
+  line-height: 1.6;
+}
+
+.model-scope-notice strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.model-scope-notice p {
+  margin: 6px 0;
+}
+
+.model-scope-notice span {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Save prediction as field observation */
+
+.save-observation-section {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.save-observation-form {
+  margin-top: 18px;
+  padding: 20px;
+  background: #f8faf9;
+  border: 1px solid #dce8df;
+  border-radius: 10px;
+}
+
+.save-observation-form h3 {
+  margin-top: 0;
+  color: #234b32;
+}
+
+.save-observation-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.save-observation-form input,
+.save-observation-form textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+}
+
+.save-observation-form input:focus,
+.save-observation-form textarea:focus {
+  outline: 2px solid #86b99a;
+  border-color: #287a46;
+}
+
+.save-observation-form textarea {
+  resize: vertical;
+}
+
+.save-success-message {
+  margin-top: 12px;
+  color: #16834a;
+  font-weight: 600;
+}
+/* Improve AI Prediction Result heading visibility */
+.disease-result-panel h2 {
+  color: #1f2937 !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  margin-bottom: 20px;
+}
+/* Fix invisible text in field observation form */
+input,
+textarea,
+select {
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280 !important;
+    opacity: 1;
+}
