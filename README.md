@@ -1,89 +1,102 @@
 🌾 AgriRakshak Assam
 AI-Assisted Rice Crop Monitoring, Disease Screening & Field Advisory Platform
-An academic smart-agriculture prototype combining Machine Learning, field observations and weather intelligence to support preliminary crop-health monitoring and decision-making.
+An intelligent academic smart-agriculture prototype combining Machine Learning, digital field observations and weather intelligence to support preliminary rice crop-health monitoring and decision-making.
+
+  
+  
+  
 
 
+  
+  
+  
+  
 
 
-
-📌 1. Project Overview
-AgriRakshak Assam is a smart-agriculture prototype developed to explore how machine learning, weather information and digital field observations can support rice crop monitoring.
-Phase 1 Objectives
+📌 Project Overview
+AgriRakshak Assam is an AI-assisted agricultural monitoring platform developed to explore how machine learning, weather information and digital field observations can support rice crop monitoring.
+The project brings together multiple capabilities in a unified web application rather than relying on a single disease prediction.
+Project Objectives
 
 Develop an AI-based rice leaf disease screening system.
-Build a digital platform for recording agricultural field observations.
+Build a digital platform for recording and monitoring agricultural field observations.
 Integrate weather information and short-term forecasts.
 Generate preliminary weather-aware field advisories.
-Support temporal monitoring, inspection and report generation.
+Support field inspections, verification and temporal monitoring.
+Provide consolidated reports and monitoring information.
 
 
 Project Status: Phase 1 — Working Prototype
 
 
-🚀 2. Key Features
+🚀 Key Features
+1. AI-Based Rice Disease Detection
 
+Upload rice leaf images for classification.
+Uses a MobileNetV3-Small deep-learning model.
+Supports six health and disease categories.
+Displays prediction confidence information.
+Provides warnings when predictions are uncertain.
 
+2. Crop & Field Monitoring
 
-Feature
-Description
+Create and manage field observations.
+Record crop information and field coordinates.
+View field records and associated measurements.
+Track observations over time.
 
+3. Field Inspection & Verification
 
+Maintain field inspection records.
+Support verification of recorded field information.
+Organise inspection-related monitoring activities.
 
+4. Weather Integration
 
-AI Disease Screening
-Classifies uploaded rice leaf images into six health/disease categories.
+Retrieves current weather conditions.
+Provides a three-day weather forecast.
+Uses the Open-Meteo API for weather information.
 
+5. Weather-Aware Field Advisories
 
-Field Monitoring
-Records and displays agricultural field observations.
+Combines weather information with field context.
+Generates preliminary field-specific advisories.
+Helps review potential crop-monitoring concerns.
 
+6. Temporal Monitoring
 
-Field Inspections
-Supports field inspection records and verification.
+Tracks changes in field observations.
+Displays vegetation-related indicators.
+Supports monitoring of risk assessments over time.
 
+7. Dashboard & Reports
 
-Weather Integration
-Retrieves current weather conditions and a three-day forecast using Open-Meteo.
-
-
-Weather-Aware Advisories
-Combines weather information with field context to generate preliminary advisories.
-
-
-Temporal Monitoring
-Tracks observations, vegetation indicators and risk assessments over time.
-
-
-Dashboard
-Provides a consolidated view of crop-monitoring information.
-
-
-Reports & Analytics
+Provides a consolidated monitoring dashboard.
+Displays important field and crop information.
 Supports report viewing and CSV exports.
 
 
+🖥️ Application Screenshots
+The following screenshots show the main modules of the AgriRakshak Assam application.
+Dashboard
 
-
-🖥️ 3. Application Screenshots
-3.1 Dashboard
-
-3.2 AI Disease Detection
+AI Disease Detection
 Prediction Result
 
 Uncertain Prediction Warning
 
-3.3 Weather-Based Advisories
+Weather-Based Advisories
 
-3.4 Temporal Monitoring
+Temporal Monitoring
 
-3.5 Field Inspections
+Field Inspections
 
-3.6 Reports & Analytics
+Reports & Analytics
 
 
-🧠 4. Machine Learning Model
+🧠 Machine Learning Model
 The project uses MobileNetV3-Small, a lightweight Convolutional Neural Network (CNN), with transfer learning for rice leaf image classification.
-4.1 Model Configuration
+Model Architecture
 
 
 
@@ -93,15 +106,15 @@ Details
 
 
 
-Architecture
+Model Architecture
 MobileNetV3-Small
 
 
-Framework
+Deep Learning Framework
 PyTorch
 
 
-Input Image Size
+Image Input Size
 224 × 224 pixels
 
 
@@ -113,27 +126,57 @@ Training Environment
 Google Colab
 
 
-Training GPU
-NVIDIA Tesla T4
+Training Hardware
+NVIDIA Tesla T4 GPU
+
+
+Learning Approach
+Transfer Learning
 
 
 
-4.2 Classification Categories
+Supported Classification Categories
 
+
+
+Class ID
+Category
+
+
+
+
+0
 Healthy
+
+
+1
 Blast
+
+
+2
 Brown Spot
+
+
+3
 Leaf Smut
+
+
+4
 Rice Tungro
+
+
+5
 Sheath Blight
 
-4.3 Dataset Information
+
+
+Dataset Information
 Dataset: RiceLeafDiseaseBD — Version 3
 
 
 
-Dataset Split
-Number of Images
+Dataset Information
+Image Count
 
 
 
@@ -158,96 +201,231 @@ Testing Set
 1,459
 
 
+Total Cleaned Images
+9,722
 
-4.4 Model Performance
-Baseline Experiment Test Accuracy: 71.69%
-This result belongs to the baseline experiment and should not be interpreted as the performance of every subsequent model checkpoint.
 
-🏗️ 5. System Architecture
-The application connects the frontend, backend, database, machine-learning model and external weather service.
+
+Baseline Model Performance
+
+Baseline Experiment Results
+
+
+
+Metric
+Result
+
+
+
+
+Test Accuracy
+71.69%
+
+
+
+The reported 71.69% accuracy belongs to the baseline experiment. It should not be interpreted as the performance of every subsequent model checkpoint.
+
+
+🏗️ System Architecture
+The platform integrates the frontend, backend, database, machine-learning model and external weather service.
+Architecture Workflow
 flowchart TD
     A["User"] --> B["React + Vite Frontend"]
     B --> C["FastAPI Backend"]
+
     C --> D["SQLite Database"]
     C --> E["MobileNetV3-Small Model"]
     C --> F["Open-Meteo Weather API"]
-    C --> G["Risk Assessment & Advisory Logic"]
-    D --> H["Dashboard & Reports"]
+
+    C --> G["Risk Assessment and Advisory Logic"]
+
+    D --> H["Dashboard and Reports"]
     E --> H
     F --> G
     G --> H
+
     H --> B
 
+Main Components
 
-⚙️ 6. Technology Stack
+Frontend: Provides the web interface and user interaction.
+Backend: Handles API requests and application logic.
+Database: Stores application records using SQLite.
+ML Model: Performs rice leaf image classification.
+Weather Service: Supplies current weather and forecast information.
+Advisory Logic: Combines available weather and field information to produce preliminary advisories.
+
+
+⚙️ Technology Stack
+Frontend Technologies
 
 
 
-Component
 Technology
+Purpose
 
 
 
 
-Frontend
-React, Vite
+React
+User interface development
 
 
-Backend
-Python, FastAPI
+Vite
+Frontend development and build tool
 
 
-Database
+
+Backend Technologies
+
+
+
+Technology
+Purpose
+
+
+
+
+Python
+Backend programming
+
+
+FastAPI
+REST API development
+
+
 SQLite
+Database management
 
 
-Machine Learning
-PyTorch, Torchvision
+
+Machine Learning Technologies
 
 
-Deep Learning Model
+
+Technology
+Purpose
+
+
+
+
+PyTorch
+Deep learning framework
+
+
+Torchvision
+Model architecture and image processing
+
+
 MobileNetV3-Small
+Rice leaf image classification
 
 
-Weather Data
+
+External Services & Development Tools
+
+
+
+Technology
+Purpose
+
+
+
+
 Open-Meteo API
+Weather information
 
 
-Development Tools
-VS Code, Google Colab, Git
+Google Colab
+Model training environment
+
+
+VS Code
+Development environment
+
+
+Git & GitHub
+Version control and project hosting
 
 
 
 
-💻 7. Installation & Local Setup
-7.1 Prerequisites
-Make sure the following tools are installed:
+📂 Project Structure
+The main project directory is organised as follows:
+AgriRakshak-Assam/
+│
+├── backend/
+│   ├── app/
+│   └── models/
+│
+├── dashboard/
+│
+├── docs/
+│   └── screenshots/
+│       ├── dashboard.png
+│       ├── disease-detection-result.png
+│       ├── disease-detection-warning.png
+│       ├── advisories-weather.png
+│       ├── temporal-monitoring.png
+│       ├── field-inspections.png
+│       └── reports-analytics.png
+│
+├── frontend/
+│   ├── public/
+│   └── src/
+│
+├── mobile/
+├── scripts/
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── requirements.txt
+└── README.md
+
+
+💻 Installation & Local Setup
+Follow these instructions to run AgriRakshak Assam on your local machine.
+Prerequisites
+Make sure the following software is installed:
 
 Python 3.10 or later
 Node.js and npm
 Git
 
-7.2 Clone the Repository
+Step 1: Clone the Repository
+Open a terminal and execute:
 git clone https://github.com/Shajeb-ECE/AgriRakshak-Assam.git
+
 cd AgriRakshak-Assam
 
-7.3 Set Up the Python Environment
+Step 2: Create a Python Virtual Environment
 Windows PowerShell:
 py -3.11 -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
+
+Upgrade pip and install the project dependencies:
 python -m pip install --upgrade pip
+
 pip install -r requirements.txt
 
-7.4 Start the Backend
-From the project root, with the virtual environment activated:
+Step 3: Start the Backend Server
+From the project root directory, execute:
 uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8001
 
-Backend API Documentation:
+The backend API will be available at:
+http://127.0.0.1:8001
+API Documentation:
 http://127.0.0.1:8001/docs
-7.5 Start the Frontend
-Open a second terminal:
+Step 4: Start the Frontend
+Open a second terminal and navigate to the frontend directory:
 cd frontend
+
+Install frontend dependencies:
 npm install
+
+Start the development server:
 npm run dev
 
 Open the local URL displayed by Vite, usually:
@@ -256,34 +434,44 @@ http://localhost:5173
 Important: Keep both the backend and frontend terminals running while using the application.
 
 
-⚠️ 8. Limitations & Responsible Use
+⚠️ Limitations & Responsible Use
+AgriRakshak Assam is an academic prototype and should be used with an understanding of its current limitations.
 
-AI predictions are preliminary screening results, not confirmed diagnoses.
-Model performance depends on dataset quality and image conditions.
-Demo or synthetic records must not be treated as real farm observations.
-Weather information is obtained from an external service, not directly measured by field sensors.
-Risk scores and vegetation trend indicators are illustrative and are not scientifically validated outbreak predictions.
-Expert agricultural verification is necessary before making crop-treatment decisions.
-The system must not be used to prescribe pesticides or other chemical treatments.
-
-
-🔮 9. Future Scope
-Potential improvements for subsequent development phases include:
-
-Improving model accuracy and generalisation using more diverse field images.
-Collecting expert-verified local rice leaf datasets.
-Exploring satellite-based crop monitoring.
-Integrating field-level IoT sensors.
-Developing a mobile application.
-Adding multilingual support for local farmers.
-Validating risk assessment and advisory logic with agricultural experts.
+Preliminary Predictions: AI outputs are screening results, not confirmed agricultural diagnoses.
+Dataset Dependency: Model performance depends on image quality and dataset diversity.
+Demo Records: Synthetic or demonstration records must not be interpreted as actual farm observations.
+Weather Data: Weather information comes from an external service and is not directly measured by field sensors.
+Illustrative Risk Assessment: Risk scores and vegetation trend indicators are illustrative and are not scientifically validated outbreak predictions.
+Expert Verification: Agricultural experts should verify findings before crop-treatment decisions.
+Treatment Decisions: The application should not be used to prescribe pesticides or other chemical treatments.
 
 
-👨‍💻 10. Project Information
+🔮 Future Scope
+The following improvements can be explored in subsequent development phases:
+Machine Learning Improvements
+
+Improve model accuracy and generalisation.
+Collect more diverse, expert-verified local rice leaf images.
+Evaluate model performance on real-world field images.
+
+Smart Agriculture Integration
+
+Explore satellite-based crop monitoring.
+Integrate field-level IoT sensors.
+Develop a mobile application for field use.
+
+Platform Improvements
+
+Add multilingual support for local farmers.
+Improve monitoring and reporting capabilities.
+Validate risk assessment and advisory logic with agricultural experts.
+
+
+👨‍💻 Project Information
 
 
 
-Detail
+Project Detail
 Information
 
 
@@ -305,13 +493,18 @@ Institution
 Tezpur University, Assam
 
 
+Project Domain
+Machine Learning & Smart Agriculture
+
+
 GitHub Repository
-AgriRakshak Assam
+AgriRakshak-Assam
 
 
 
 
 
-AgriRakshak Assam
-Exploring AI-assisted crop monitoring and smarter agricultural decision support.
+🌾 AgriRakshak Assam
+Bridging Machine Learning, Field Intelligence and Smart Agriculture.
+Developed as an academic prototype exploring AI-assisted crop monitoring and agricultural decision support.
 
